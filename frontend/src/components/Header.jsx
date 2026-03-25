@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Terminal } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,12 +26,11 @@ const Header = () => {
           <Link 
             to="/" 
             data-testid="logo-link"
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-1 group"
           >
-            <Terminal 
-              className="w-6 h-6 text-[#00E5FF] transition-all group-hover:drop-shadow-[0_0_10px_rgba(0,229,255,0.5)]" 
-              strokeWidth={1.5}
-            />
+            <span className="font-mono text-xl text-[#00E5FF] transition-all group-hover:drop-shadow-[0_0_10px_rgba(0,229,255,0.5)]">
+              {`>_`}
+            </span>
             <span className="font-mono text-sm tracking-[0.2em] text-[#F3F4F6] uppercase">
               THE_SYSTEMIC_ARCHITECT
             </span>

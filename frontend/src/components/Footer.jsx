@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Terminal, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -50,11 +50,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Logo & Description */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <Terminal 
-                className="w-5 h-5 text-[#00E5FF]" 
-                strokeWidth={1.5}
-              />
+            <div className="flex items-center gap-1">
+              <span className="font-mono text-lg text-[#00E5FF]">
+                {`>_`}
+              </span>
               <span className="font-mono text-xs tracking-[0.2em] text-[#F3F4F6] uppercase">
                 THE_SYSTEMIC_ARCHITECT
               </span>
