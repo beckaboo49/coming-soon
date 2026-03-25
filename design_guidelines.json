@@ -1,0 +1,76 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 7 (Electric & Neon) crossed with Archetype 4 (Swiss & High-Contrast). Specific Theme: Technical Command Center / Cybernetic Brutalism.",
+  "colors": {
+    "background": "#060606",
+    "surface": "#0F0F0F",
+    "surface_glass": "rgba(6, 6, 6, 0.7)",
+    "primary": "#00E5FF",
+    "primary_glow": "rgba(0, 229, 255, 0.4)",
+    "text_main": "#F3F4F6",
+    "text_muted": "#9CA3AF",
+    "border": "#262626",
+    "border_accent": "rgba(0, 229, 255, 0.2)"
+  },
+  "typography": {
+    "font_family_heading": "'JetBrains Mono', monospace",
+    "font_family_body": "'Inter', sans-serif",
+    "font_family_mono": "'JetBrains Mono', monospace",
+    "h1": "text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight uppercase font-mono text-[#F3F4F6]",
+    "h2": "text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight uppercase font-mono text-[#F3F4F6]",
+    "h3": "text-xl sm:text-2xl font-semibold uppercase font-mono text-[#F3F4F6]",
+    "body": "text-base leading-relaxed text-[#9CA3AF] font-sans",
+    "mono_details": "text-sm tracking-[0.1em] uppercase text-[#00E5FF] font-mono",
+    "glitch_effect": "Implement via CSS using text-shadow with cyan and subtle magenta to simulate terminal distortion, or simply sharp primary text."
+  },
+  "layout_and_spacing": {
+    "corners": "rounded-none (0px border-radius strictly enforced across ALL elements, cards, and buttons)",
+    "container_padding": "p-6 md:p-12",
+    "grid_background": "bg-[linear-gradient(to_right,rgba(0,229,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,229,255,0.07)_1px,transparent_1px)] bg-[size:40px_40px]",
+    "border_collapse": "Use explicit borders `border border-[#262626]` on cards/grid containers to create a skeletal, command-center look (The Grid Borders rule)."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-transparent border border-[#00E5FF] text-[#00E5FF] font-mono hover:bg-[#00E5FF]/10 hover:shadow-[0_0_15px_rgba(0,229,255,0.4)] transition-all uppercase tracking-widest px-8 py-4",
+      "secondary": "bg-[#0F0F0F] border border-[#262626] text-[#F3F4F6] font-mono hover:border-[#00E5FF]/50 transition-all uppercase tracking-widest px-8 py-4"
+    },
+    "inputs": {
+      "terminal_style": "bg-transparent border-b border-[#00E5FF]/50 focus:border-[#00E5FF] text-[#00E5FF] font-mono outline-none px-0 py-2 w-full placeholder:text-[#00E5FF]/30 transition-all text-lg"
+    },
+    "systemic_note": "border-l-2 border-[#00E5FF] bg-[#00E5FF]/5 p-6 my-8 font-mono text-sm text-[#F3F4F6] relative",
+    "tags": "inline-block border border-[#262626] bg-[#060606] px-3 py-1 text-xs font-mono text-[#00E5FF] uppercase tracking-wider"
+  },
+  "sections_instructions": {
+    "command_center_home": "Full viewport height hero utilizing the 40px blueprint grid background. 'Glitch' headline styling. Terminal-style email capture block functioning like a CLI prompt (`> ENTER_ACCESS_CODE@EMAIL.COM`). Include blinking block cursor effect.",
+    "depot_product_suite": "A 'Blueprint View' bento grid. Display the `isometric_product` image as the flagship visual. Incorporate a 'Technical Specs' list styled similarly to code syntax or JSON format. Include a Payhip checkout button trigger.",
+    "signal_blog": "Article layout architecture with a Sticky Conversion sidebar. Blog briefs grouped via systemic monospace tags [STRATEGY], [AUTOMATION], [MONETIZATION]. Use the `systemic_note` component. Interlink section styled as 'Suggested Infrastructure'.",
+    "infrastructure_affiliate": "Grid layout representing 'Core Modules'. Each module card features an 'Architect's Review' and a strict monospaced affiliate disclaimer. Keep logos and module graphics highly technical.",
+    "footer": "System status bar footer. Include 'STATUS: ONLINE' with a blinking neon green/cyan dot. Minimalist social links. Include a CLI-style help menu or directory path."
+  },
+  "images": {
+    "hero_blueprint": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/68235137-35d5-4f7f-ba5b-c75906e07605/images/5c434010c3a24787b4621fb4f0c89b1883ac3746fed0c94daad88b4ce5e788c1.png",
+      "description": "Abstract digital architecture blueprint with glowing electric blue geometric lines. Perfect for hero background overlay or command center ambient visual."
+    },
+    "terminal_bg": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/68235137-35d5-4f7f-ba5b-c75906e07605/images/1aa742dcdab957feff00620a83ebbbfc7b38199b7151e23287b2e7663282d589.png",
+      "description": "Dark terminal interface background. Use for depth in sections that need high-tech texture without distracting from content."
+    },
+    "isometric_product": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/68235137-35d5-4f7f-ba5b-c75906e07605/images/21e52e087e163e20d6552815e5dcd22cf3ef245c754b3b73d09ee571809ef24f.png",
+      "description": "Isometric 3D software box mockup. Mandatory use in The Depot section to represent the flagship digital product."
+    },
+    "server_rack_bg": {
+      "url": "https://images.pexels.com/photos/17489152/pexels-photo-17489152.jpeg",
+      "description": "Modern rack-mounted server units. Good contextual background image for the 'Infrastructure' (Affiliate Stack) section (use heavy dark #060606 overlay)."
+    }
+  },
+  "icons": {
+    "library": "lucide-react",
+    "instructions": "Use with strokeWidth={1.5} or 1.25. Stick strictly to geometric, hard-edged icons representing technical interfaces."
+  },
+  "testing": {
+    "data_testid_rule": "ALL interactive elements and key text nodes MUST have data-testid. Examples: data-testid='terminal-email-submit', data-testid='product-checkout-trigger', data-testid='affiliate-link-item', data-testid='system-status-indicator'."
+  },
+  "instructions_to_main_agent": "CRITICAL: Enforce Archetype 7 / Command Center Brutalism. The background MUST have the 40px grid effect (`bg-[size:40px_40px]`). All corners MUST be `rounded-none`. Typography MUST strictly follow JetBrains Mono for headers/UI elements and Inter for body text. Ensure pure high contrast between Deep Black #060606 and Electric Blue #00E5FF. Implement CSS hover glows. Do NOT use standard Shadcn borders/radius; override everything to be sharp, skeletal, and terminal-like."
+}
