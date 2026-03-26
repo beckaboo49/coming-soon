@@ -9,22 +9,35 @@ import ProductPage from "@/pages/ProductPage";
 import BlogPage from "@/pages/BlogPage";
 import BlogPostPage from "@/pages/BlogPostPage";
 import ResourcesPage from "@/pages/ResourcesPage";
+import ComingSoonPage from "@/pages/ComingSoonPage";
+import PortalPage from "@/pages/PortalPage";
 
 function App() {
   return (
     <div className="App min-h-screen bg-[#060606]">
       <BrowserRouter>
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/depot" element={<ProductPage />} />
-            <Route path="/briefings" element={<BlogPage />} />
-            <Route path="/briefings/:slug" element={<BlogPostPage />} />
-            <Route path="/stack" element={<ResourcesPage />} />
-          </Routes>
-        </main>
-        <Footer />
+        <Routes>
+          {/* Pages without header/footer */}
+          <Route path="/coming-soon" element={<ComingSoonPage />} />
+          <Route path="/portal" element={<PortalPage />} />
+          
+          {/* Main pages with header/footer */}
+          <Route path="/*" element={
+            <>
+              <Header />
+              <main>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/depot" element={<ProductPage />} />
+                  <Route path="/briefings" element={<BlogPage />} />
+                  <Route path="/briefings/:slug" element={<BlogPostPage />} />
+                  <Route path="/stack" element={<ResourcesPage />} />
+                </Routes>
+              </main>
+              <Footer />
+            </>
+          } />
+        </Routes>
         <Toaster />
       </BrowserRouter>
     </div>
