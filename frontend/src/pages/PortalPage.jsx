@@ -81,18 +81,24 @@ const PortalPage = () => {
   return (
     <div 
       data-testid="portal-page" 
-      className="min-h-screen bg-[#060606] blueprint-grid flex items-center justify-center px-6 py-16"
+      className="min-h-screen bg-[#060606] blueprint-grid flex flex-col px-6 py-6"
     >
+      {/* Top Left Logo */}
+      <div className="mb-8">
+        <a href="/" className="inline-flex items-center gap-1 group">
+          <span className="font-mono text-xl text-[#00E5FF] transition-all group-hover:drop-shadow-[0_0_10px_rgba(0,229,255,0.5)]">
+            {`>_`}
+          </span>
+          <span className="font-mono text-sm tracking-[0.2em] text-[#F3F4F6] uppercase">
+            THE_SYSTEMIC_ARCHITECT
+          </span>
+        </a>
+      </div>
+
+      <div className="flex-1 flex items-center justify-center">
       <div className="max-w-md w-full">
         {/* Header */}
         <div className="text-center mb-10">
-          {/* Logo */}
-          <div className="flex items-center justify-center gap-1 mb-6">
-            <span className="font-mono text-2xl text-[#00E5FF]">{`>_`}</span>
-            <span className="font-mono text-sm tracking-[0.15em] text-[#F3F4F6] uppercase">
-              THE_SYSTEMIC_ARCHITECT
-            </span>
-          </div>
 
           {/* Title */}
           <h1 
@@ -154,6 +160,7 @@ const PortalPage = () => {
             // SYSTEMIC_INFRASTRUCTURE_V2.0
           </p>
         </div>
+      </div>
       </div>
     </div>
   );

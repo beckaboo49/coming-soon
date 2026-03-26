@@ -64,8 +64,21 @@ const ComingSoonPage = () => {
   return (
     <div 
       data-testid="coming-soon-page" 
-      className="min-h-screen bg-[#060606] blueprint-grid flex items-center justify-center px-6"
+      className="min-h-screen bg-[#060606] blueprint-grid flex flex-col px-6"
     >
+      {/* Top Left Logo */}
+      <div className="py-6">
+        <a href="/" className="inline-flex items-center gap-1 group">
+          <span className="font-mono text-xl text-[#00E5FF] transition-all group-hover:drop-shadow-[0_0_10px_rgba(0,229,255,0.5)]">
+            {`>_`}
+          </span>
+          <span className="font-mono text-sm tracking-[0.2em] text-[#F3F4F6] uppercase">
+            THE_SYSTEMIC_ARCHITECT
+          </span>
+        </a>
+      </div>
+
+      <div className="flex-1 flex items-center justify-center">
       <div className="max-w-2xl w-full text-center">
         {/* System Status */}
         <div className="mb-8">
@@ -185,6 +198,7 @@ const ComingSoonPage = () => {
           <span className="font-mono text-xs tracking-[0.1em] text-[#9CA3AF]">
             STATUS: <span className="text-[#FFBD2E]">DEPLOYING</span> | ETA: <span className="text-[#00E5FF]">SOON</span>
           </span>
+        </div>
         </div>
       </div>
     </div>
