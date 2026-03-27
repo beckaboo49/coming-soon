@@ -4,62 +4,62 @@ import axios from "axios";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
+// Fallback resources if API returns empty (moved outside component for stable reference)
+const defaultResources = [
+  {
+    id: "1",
+    name: "EmailOctopus",
+    description: "Email marketing infrastructure for systematic audience building.",
+    review: "The backbone of my email automation system. Clean interface, reliable deliverability, and the free tier is generous enough to build a substantial list before scaling.",
+    url: "https://emailoctopus.com",
+    category: "EMAIL"
+  },
+  {
+    id: "2",
+    name: "Payhip",
+    description: "Digital product delivery with frictionless checkout.",
+    review: "Zero-hassle digital product sales. Handles payments, delivery, and VAT automatically. The modal checkout keeps customers on your site.",
+    url: "https://payhip.com",
+    category: "COMMERCE"
+  },
+  {
+    id: "3",
+    name: "Notion",
+    description: "Documentation and content architecture hub.",
+    review: "Where I architect every piece of content before it goes live. Perfect for building interconnected knowledge systems.",
+    url: "https://notion.so",
+    category: "PRODUCTIVITY"
+  },
+  {
+    id: "4",
+    name: "Carrd",
+    description: "Rapid landing page deployment.",
+    review: "When you need a landing page live in 15 minutes. Great for testing new offers before building full infrastructure.",
+    url: "https://carrd.co",
+    category: "WEB"
+  },
+  {
+    id: "5",
+    name: "Canva",
+    description: "Visual asset creation for consistent branding.",
+    review: "Essential for creating product mockups, social graphics, and visual documentation without design overhead.",
+    url: "https://canva.com",
+    category: "DESIGN"
+  },
+  {
+    id: "6",
+    name: "Gumroad",
+    description: "Alternative digital commerce platform.",
+    review: "Solid backup commerce platform with built-in audience features. Good for creators who want discovery alongside sales.",
+    url: "https://gumroad.com",
+    category: "COMMERCE"
+  }
+];
+
 const ResourcesPage = () => {
   const [resources, setResources] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState(null);
-
-  // Fallback resources if API returns empty
-  const defaultResources = [
-    {
-      id: "1",
-      name: "EmailOctopus",
-      description: "Email marketing infrastructure for systematic audience building.",
-      review: "The backbone of my email automation system. Clean interface, reliable deliverability, and the free tier is generous enough to build a substantial list before scaling.",
-      url: "https://emailoctopus.com",
-      category: "EMAIL"
-    },
-    {
-      id: "2",
-      name: "Payhip",
-      description: "Digital product delivery with frictionless checkout.",
-      review: "Zero-hassle digital product sales. Handles payments, delivery, and VAT automatically. The modal checkout keeps customers on your site.",
-      url: "https://payhip.com",
-      category: "COMMERCE"
-    },
-    {
-      id: "3",
-      name: "Notion",
-      description: "Documentation and content architecture hub.",
-      review: "Where I architect every piece of content before it goes live. Perfect for building interconnected knowledge systems.",
-      url: "https://notion.so",
-      category: "PRODUCTIVITY"
-    },
-    {
-      id: "4",
-      name: "Carrd",
-      description: "Rapid landing page deployment.",
-      review: "When you need a landing page live in 15 minutes. Great for testing new offers before building full infrastructure.",
-      url: "https://carrd.co",
-      category: "WEB"
-    },
-    {
-      id: "5",
-      name: "Canva",
-      description: "Visual asset creation for consistent branding.",
-      review: "Essential for creating product mockups, social graphics, and visual documentation without design overhead.",
-      url: "https://canva.com",
-      category: "DESIGN"
-    },
-    {
-      id: "6",
-      name: "Gumroad",
-      description: "Alternative digital commerce platform.",
-      review: "Solid backup commerce platform with built-in audience features. Good for creators who want discovery alongside sales.",
-      url: "https://gumroad.com",
-      category: "COMMERCE"
-    }
-  ];
 
   const categories = [
     { id: "EMAIL", label: "EMAIL", icon: <Mail className="w-4 h-4" strokeWidth={1.5} /> },
