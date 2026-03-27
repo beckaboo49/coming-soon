@@ -18,12 +18,14 @@ function App() {
     <div className="App min-h-screen bg-[#060606]">
       <BrowserRouter>
         <Routes>
-          {/* Pages without header/footer */}
+          {/* Coming Soon as the main landing */}
+          <Route path="/" element={<ComingSoonPage />} />
           <Route path="/coming-soon" element={<ComingSoonPage />} />
           <Route path="/portal" element={<PortalPage />} />
           <Route path="/toolkit" element={<ToolkitLandingPage />} />
           
-          {/* Main pages with header/footer */}
+          {/* Full site (hidden for now - uncomment when ready to launch) */}
+          {/*
           <Route path="/*" element={
             <>
               <Header />
@@ -39,6 +41,7 @@ function App() {
               <Footer />
             </>
           } />
+          */}
         </Routes>
         <Toaster />
       </BrowserRouter>
